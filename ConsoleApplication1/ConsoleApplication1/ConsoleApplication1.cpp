@@ -31,50 +31,9 @@ using namespace std;
 static int bitArray[20] = { X00,X01,X02,X03,X04,X05,X06,X07,X08,X09,X10,X11,X12,X13,X14,X15,X16,X17,X18,X19};
 
 
+
+
 int solution(vector<int> numbers, int target) {
-	int answer = 0;
-
-	//	const int maxBit = (numbers.size() << 1) - 1; //
-	/*
-	* 	1 0 0 0 0 0  -1
-		0 1 1 1 1 1 
-	*/
-	//bitset<numbers.size()> aa;
-
-	auto realsize = numbers.size();
-	int curBit = (1 << numbers.size());
-	int sum = 0;
-	int idx = 0;
-	while (curBit != 0)
-	{
-		sum = 0;
-		idx = 0;
-		for (idx = 0; idx < realsize; ++idx)
-			sum += curBit & bitArray[idx] /*pow(2, idx)*/ ? numbers[idx] : -numbers[idx];
-
-
-		//for (int idx = 0; idx < realsize; idx++)
-		//	sum += bit & (int)pow(2, idx) ? numbers[idx] : -numbers[idx];
-
-		//cout << sum;;
-		if (sum == target)
-		{
-			answer++;
-			//cout <<" : " << answer << "!" << endl;;
-		}
-
-		curBit--;
-	}
-
-
-	//bitArray[realsize -1]
-
-	return answer;
-}
-
-
-
-int solution2(vector<int> numbers, int target) {
 	int answer = 0;
 
 	//	const int maxBit = (numbers.size() << 1) - 1; //
